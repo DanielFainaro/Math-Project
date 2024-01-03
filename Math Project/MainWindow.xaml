@@ -1,0 +1,75 @@
+﻿<Window x:Class="Math_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Math_Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Image Source="C:\Users\User\Desktop\מדעי המחשב\desktop-wallpaper-barcelona-computer-background-fc-barcelona.jpg" Stretch="Fill"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="welcome" Grid.Column="1" Content="WELCOME!" HorizontalAlignment="Center" VerticalAlignment="Center" Height="145" Width="400" FontSize="105" FontWeight="Bold" FontFamily="Freestyle Script">
+                <Label.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF2F305"/>
+                        <GradientStop Color="#FF5E1BC5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Label.Foreground>
+            </Label>
+
+            <TextBlock x:Name="choosegrade"  Grid.Column="1" HorizontalAlignment="Left" Margin="0,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Hi culer! please select your grade" VerticalAlignment="Top" Height="44" Width="411" FontSize="28" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.478"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <ComboBox x:Name="grade" Grid.Column="1" HorizontalAlignment="Left" Margin="0,72,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Text="Select grade" FontSize="28" SelectionChanged="grade_SelectionChanged">
+                <Button Content="1st grade" Click="grade1btn"/>
+                <Button Content="2nd grade" Click="grade2btn"/>
+                <Button Content="3rd Grade" Click="grade3btn"/>
+                <Button Content="4th Grade" Click="grade4btn"/>
+            </ComboBox>
+            <Button x:Name="ready"  Grid.Column="1" Content="I'm ready!" FontSize="24"  HorizontalAlignment="Left" Margin="149,72,0,0" Grid.Row="1" VerticalAlignment="Top" Height="45" Width="150" Background="{x:Null}" FontFamily="Arial Black" BorderBrush="Red" Click="readybtn"/>
+            <TextBox  x:Name="num1" Visibility="Collapsed" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" Height="56" Background="#FFE0A72A"/>
+            <TextBox  x:Name="num2" Visibility="Collapsed" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="110" Grid.Column="1" Height="57" Background="#FFE0A72A" Margin="132,0,0,0"/>
+            <TextBox  x:Name="mathsymbol" Visibility="Collapsed" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="62" Height="62" Background="#FFE0A72A"/>
+            <TextBox   x:Name="answer"  Visibility="Collapsed" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Height="57" Background="#FFE0A72A" FontSize="24" GotFocus="answerfocous" Margin="60,36,0,0" Grid.Row="1"/>
+            <Button  x:Name="submitbtn" Visibility="Collapsed" Grid.Column="1" Content="SUBMIT" HorizontalAlignment="Left" Margin="299,34,0,0" Grid.Row="1" VerticalAlignment="Top" Height="57" Width="78" Background="#FFE0A72A" FontSize="18" Click="subclick"/>
+            <Label x:Name="YourAnswerLabel" Visibility="Collapsed" Content="Your answer:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="200" Margin="41,38,0,0" FontSize="28" Background="#FFE0A72A" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+
+        </Grid>
+        <Image x:Name="wgif" Visibility="Collapsed" Source="C:\Users\User\Desktop\מדעי המחשב\MSN goal.jpg" HorizontalAlignment="Left" Height="110" Margin="62,274,0,0" VerticalAlignment="Top" Width="190" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+        </Image>
+        <Image x:Name="Lgif" Visibility="Collapsed" Source="C:\Users\User\Desktop\מדעי המחשב\MSN sad.jpg" HorizontalAlignment="Left" Height="110" Margin="62,274,0,0" VerticalAlignment="Top" Width="190" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+        </Image>
+        <Image x:Name="V" Visibility="Collapsed" Source="C:\Users\User\Desktop\מדעי המחשב\V.png" HorizontalAlignment="Left" Height="60" Margin="552,30,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+        </Image>
+        <Image x:Name="X" Visibility="Collapsed" Source="C:\Users\User\Desktop\מדעי המחשב\X real.png" HorizontalAlignment="Left" Height="70" Margin="674,30,0,0" VerticalAlignment="Top" Width="94" RenderTransformOrigin="0.5,0.5" Stretch="Fill">
+        </Image>
+        <TextBlock x:Name="WrongAnswers" Visibility="Collapsed" HorizontalAlignment="Left" Height="55" Margin="674,90,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" FontSize="72" FontFamily="Rage Italic" TextAlignment="Center"/>
+        <TextBlock x:Name="RightAnswers" Visibility="Collapsed" HorizontalAlignment="Left" Height="55" Margin="531,90,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="68" FontSize="72" FontFamily="Rage Italic" TextAlignment="Center"/>
+        <Button x:Name="finished" Visibility="Collapsed" Content="finished!" FontSize="24"  HorizontalAlignment="Left" Margin="349,342,0,0" VerticalAlignment="Top" Height="45" Width="150" Background="{x:Null}" FontFamily="Arial Black" BorderBrush="Red" Click="finishbtn"/>
+        <Image x:Name="backtohomeimage" Visibility="Collapsed" Source="C:\Users\User\Desktop\מדעי המחשב\returnarrow.png" Margin="0,0,730,390"/>
+        <Button x:Name="backtohomebtn" Visibility="Collapsed" Click="ImageButton_Click" Margin="0,0,720,380" Background="{x:Null}"/>
+
+
+
+    </Grid>
+</Window>
